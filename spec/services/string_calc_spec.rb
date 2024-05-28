@@ -5,13 +5,11 @@ RSpec.describe StringCalc do
 		it 'returns 0 for an empty string' do
 			result = StringCalc.add("")
 			expect(result).to eq(0)
-			puts "returns 0 for an empty string"
 		end
 
 		it 'returns sum for an string' do
 			result = StringCalc.add("1")
 			expect(result).to eq(1)
-			puts "returns 1 for an empty string"
 		end
 
 		it 'returns sum for an string' do
@@ -27,6 +25,11 @@ RSpec.describe StringCalc do
 		it 'returns 13 for an empty string' do
 			result = StringCalc.add("2,4,2,5")
 			expect(result).to eq(13)
+		end
+
+		it 'returns exception for negative numbers' do
+			result = StringCalc.add("-5,3,-1,-2")
+			expect(result).to eq("negative numbers not allowed -5, -1, -2")
 		end
 	end
 end
