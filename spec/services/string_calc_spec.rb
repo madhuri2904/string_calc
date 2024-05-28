@@ -13,5 +13,10 @@ RSpec.describe StringCalc do
 			expect(result).to eq(1)
 			puts "returns 1 for an empty string"
 		end
+
+		it 'returns sum for an string' do
+			result = StringCalc.add("0,3")
+			expect(result).to eq(3)
+		end
 	end
 end
