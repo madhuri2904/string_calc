@@ -18,5 +18,10 @@ RSpec.describe StringCalc do
 			result = StringCalc.add("0,3")
 			expect(result).to eq(3)
 		end
+
+		it 'returns 6 for an string' do
+			result = StringCalc.add("1,3,2")
+			expect(result).to eq(6)
+		end
 	end
 end
