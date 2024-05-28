@@ -23,5 +23,10 @@ RSpec.describe StringCalc do
 			result = StringCalc.add("1,3,2")
 			expect(result).to eq(6)
 		end
+
+		it 'returns 13 for an empty string' do
+			result = StringCalc.add("2,4,2,5")
+			expect(result).to eq(13)
+		end
 	end
 end
