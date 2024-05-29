@@ -56,5 +56,10 @@ RSpec.describe StringCalc do
 			result = StringCalc.add('/[***]\n1***2***3')
 			expect(result).to eq(6)
 		end
+
+		it 'returns sum when string contain multiple delimiters' do
+			result = StringCalc.add('//[*][%]\n1*2%3')
+			expect(result).to eq(6)
+		end
 	end
 end
