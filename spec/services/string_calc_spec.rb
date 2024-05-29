@@ -51,5 +51,10 @@ RSpec.describe StringCalc do
 			result = StringCalc.add('2,1001')
 			expect(result).to eq(2)
 		end
+
+		it 'returns sum for string contain *' do
+			result = StringCalc.add('/[***]\n1***2***3')
+			expect(result).to eq(6)
+		end
 	end
 end
