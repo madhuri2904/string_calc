@@ -36,5 +36,10 @@ RSpec.describe StringCalc do
 			result = StringCalc.add('2\n4,5\n8')
 			expect(result).to eq(19)
 		end
+
+		it 'returns sum of number for string' do
+			result = StringCalc.add('//;\n2;3;4')
+			expect(result).to eq(9)
+		end
 	end
 end
