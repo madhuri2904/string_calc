@@ -43,8 +43,13 @@ RSpec.describe StringCalc do
 		end
 
 		it 'returns invalid for an empty string' do
-			 result = StringCalc.add('8,\n')
-			 expect(result).to eq('invalid')
-		 end
+			result = StringCalc.add('8,\n')
+			expect(result).to eq('invalid')
+		end
+
+		it 'returns sum of and not include number >1000' do
+			result = StringCalc.add('2,1001')
+			expect(result).to eq(2)
+		end
 	end
 end
