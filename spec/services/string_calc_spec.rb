@@ -31,5 +31,35 @@ RSpec.describe StringCalc do
 			result = StringCalc.add("-5,3,-1,-2")
 			expect(result).to eq("negative numbers not allowed -5, -1, -2")
 		end
+
+		it 'returns 19 for an \n string' do
+			result = StringCalc.add('2\n4,5\n8')
+			expect(result).to eq(19)
+		end
+
+		it 'returns sum of number for string' do
+			result = StringCalc.add('//;\n2;3;4')
+			expect(result).to eq(9)
+		end
+
+		it 'returns invalid for an empty string' do
+			result = StringCalc.add('8,\n')
+			expect(result).to eq('invalid')
+		end
+
+		it 'returns sum of and not include number >1000' do
+			result = StringCalc.add('2,1001')
+			expect(result).to eq(2)
+		end
+
+		it 'returns sum for string contain *' do
+			result = StringCalc.add('/[***]\n1***2***3')
+			expect(result).to eq(6)
+		end
+
+		it 'returns sum when string contain multiple delimiters' do
+			result = StringCalc.add('//[*][%]\n1*2%3')
+			expect(result).to eq(6)
+		end
 	end
 end
