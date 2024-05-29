@@ -31,5 +31,10 @@ RSpec.describe StringCalc do
 			result = StringCalc.add("-5,3,-1,-2")
 			expect(result).to eq("negative numbers not allowed -5, -1, -2")
 		end
+
+		it 'returns 19 for an \n string' do
+			result = StringCalc.add('2\n4,5\n8')
+			expect(result).to eq(19)
+		end
 	end
 end
