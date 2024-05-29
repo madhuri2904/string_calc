@@ -41,5 +41,10 @@ RSpec.describe StringCalc do
 			result = StringCalc.add('//;\n2;3;4')
 			expect(result).to eq(9)
 		end
+
+		it 'returns invalid for an empty string' do
+			 result = StringCalc.add('8,\n')
+			 expect(result).to eq('invalid')
+		 end
 	end
 end
